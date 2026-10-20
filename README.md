@@ -28,6 +28,7 @@ Pemeriksaan agregasi keuangan pada database lokal (menyisipkan satu catatan seme
 
 ```powershell
 php tests/financial_logic.php
+php tests/financial_range.php
 ```
 
 Contoh konfigurasi lokal XAMPP: `DB_HOST=127.0.0.1`, `DB_PORT=3306`, `DB_NAME=uts_umkm`, `DB_USER=root`. Isi `DB_PASSWORD` sesuai konfigurasi lokal. Jangan gunakan akun database tanpa pembatasan pada produksi.
@@ -47,4 +48,3 @@ Satu baris penjualan mewakili satu deskripsi barang/layanan. Aplikasi ini bukan 
 ## Status Git dan layanan jarak jauh
 
 Repository lokal `main` memiliki riwayat commit bermakna; proses branch fitur, penguatan ekspor CSV, simulasi `git restore`, dan konflik merge dicatat pada `docs/git-local-process.md`. Repository publik GitHub: https://github.com/RAJA240104015/uts-rpl-penjualan-umkm. Impor source, branch remote, dan pull request sedang disiapkan. Screenshot autentik yang belum tersimpan didata pada `screenshots/README.md`.
-
