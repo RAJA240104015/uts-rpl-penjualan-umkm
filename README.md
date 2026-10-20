@@ -39,7 +39,7 @@ Skema sumber terdapat pada `database/schema.sql`. Kamus data dan relasi dijelask
 
 ## Konfigurasi produksi
 
-Konfigurasi Vercel disiapkan memakai community runtime `vercel-php@0.6.2` (PHP 8.2) dan sebuah router yang hanya mengizinkan halaman PHP aplikasi. PHP bukan runtime resmi bawaan Vercel. Deployment tetap memerlukan project Vercel dan database MySQL jarak jauh yang dapat dijangkau dari function; database lokal XAMPP tidak dapat menjadi database publik. Atur `APP_KEY` dan semua `DB_*` sebagai environment variables pada hosting; aktifkan TLS sesuai persyaratan penyedia database. Jangan mengirim `.env` ke repository. Runtime belum diuji melalui deployment, dan koneksi database produksi belum tersedia.
+Konfigurasi Vercel memakai community runtime `vercel-php@0.6.2` (PHP 8.2) dengan router yang meneruskan halaman aplikasi ke fungsi PHP. PHP bukan runtime resmi bawaan Vercel. Deployment produksi tersedia di https://uts-rpl-penjualan-umkm.vercel.app dan halaman login serta aset CSS telah merespons melalui HTTPS. Login dan fitur data tetap memerlukan MySQL/MariaDB jarak jauh yang dapat dijangkau dari function; database lokal XAMPP tidak dapat menjadi database publik. Koneksi database produksi dan environment variables `APP_KEY` serta `DB_*` belum disiapkan. Jangan mengirim `.env` ke repository.
 
 ## Batasan proyek
 

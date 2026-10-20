@@ -2,7 +2,7 @@
 
 ## Repository dan keamanan
 
-Repository lokal berada di E:\zKULIAH\RPL\UTS, dengan branch utama main dan branch fitur feature/laporan-keuangan. Remote origin mengarah ke repository publik https://github.com/RAJA240104015/uts-rpl-penjualan-umkm. Berkas .env serta folder kerja lokal diabaikan oleh .gitignore; .env tidak tercatat dalam Git. Berkas yang dikirim ke repository publik diambil dari git ls-files, sehingga .env lokal tidak ikut.
+Repository lokal berada di E:\zKULIAH\RPL\UTSS, dengan branch utama main dan branch fitur feature/laporan-keuangan. Remote origin mengarah ke repository publik https://github.com/RAJA240104015/uts-rpl-penjualan-umkm. Berkas .env serta folder kerja lokal diabaikan oleh .gitignore; .env tidak tercatat dalam Git. Berkas yang dikirim ke repository publik diambil dari git ls-files, sehingga .env lokal tidak ikut.
 
 Repository README awal yang metadata commit-nya memakai alamat email akun dijadikan privat dan diubah nama menjadi arsip privat. Repository publik baru dibuat setelah pengaturan alamat email privat GitHub diaktifkan. Metadata author dan committer pada commit publik diperiksa melalui GitHub; semuanya memakai alamat noreply, bukan email kampus.
 
@@ -59,4 +59,4 @@ Pemeriksaan agregasi dan keamanan CSV dijalankan dengan php tests/financial_logi
 
 Tangkapan browser aplikasi lokal (login, dashboard, penjualan, pengeluaran, laporan, dan tampilan ponsel) serta halaman publik GitHub (repository, feature branch, dan PR) sudah disimpan pada folder screenshot lokal. Berkas PNG sengaja tidak diunggah ke repository publik. Data pada screenshot aplikasi berlabel simulasi; akun uji dan catatan tambahannya dihapus setelah pengujian.
 
-Screenshot terminal untuk PHP, `git log`, pemulihan `git restore`, dan konflik sebelum/sesudah penyelesaian, serta screenshot struktur database aktual masih belum tersedia. Bukti URL publik dan operasi produksi menunggu deployment Vercel.
+Screenshot terminal untuk PHP, `git log`, pemulihan `git restore`, dan konflik sebelum/sesudah penyelesaian, serta screenshot struktur database aktual masih belum tersedia. Deployment Vercel produksi: https://uts-rpl-penjualan-umkm.vercel.app. Halaman login dan CSS sudah diverifikasi dapat diakses; operasi yang menyimpan data memerlukan konfigurasi MySQL/MariaDB produksi. Screenshot terminal Git restore dan konflik lokal belum tersedia.
