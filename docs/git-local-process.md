@@ -1,45 +1,60 @@
-# Catatan proses Git lokal
+# Catatan proses Git
 
 ## Repository dan keamanan
 
-Repository dibuat lokal pada `E:\zKULIAH\RPL\UTS` dengan branch utama `main`. Branch fitur lokal adalah `feature/laporan-keuangan`. Working tree bersih setelah penggabungan lokal. Perintah `git remote -v` tidak menampilkan remote; repository GitHub dan pull request belum dibuat. Berkas `.env` dan `work/` terabaikan oleh `.gitignore`; `.env` tidak tercatat dalam `git ls-files`.
+Repository lokal berada di E:\zKULIAH\RPL\UTS, dengan branch utama main dan branch fitur feature/laporan-keuangan. Remote origin mengarah ke repository publik https://github.com/RAJA240104015/uts-rpl-penjualan-umkm. Berkas .env serta folder kerja lokal diabaikan oleh .gitignore; .env tidak tercatat dalam Git. Berkas yang dikirim ke repository publik diambil dari git ls-files, sehingga .env lokal tidak ikut.
 
-## Riwayat commit
+Repository README awal yang metadata commit-nya memakai alamat email akun dijadikan privat dan diubah nama menjadi arsip privat. Repository publik baru dibuat setelah pengaturan alamat email privat GitHub diaktifkan. Metadata author dan committer pada commit publik diperiksa melalui GitHub; semuanya memakai alamat noreply, bukan email kampus.
+
+Riwayat publik disusun menjadi commit bertahap yang bermakna. Source diunggah setelah README, skema database, autentikasi/dashboard/penjualan, pengeluaran/laporan, serta analisis dan diagram selesai. Feature branch dan pull request ditambahkan setelahnya. Riwayat publik ini tidak menyalin rantai commit lokal lama karena pemisahan tersebut diperlukan untuk membersihkan metadata email sebelum publikasi.
+
+## Ringkasan riwayat lokal
 
 | Commit | Pesan |
 |---|---|
-| `04bc271` | `chore: initialize PHP project foundation` |
-| `e90f7aa` | `feat: add MySQL schema and simulated data` |
-| `1e379e7` | `feat: add authentication and dashboard` |
-| `d7aa4e8` | `feat: add sales and expense recording` |
-| `927d2cc` | `feat: add financial reports and CSV export` |
-| `2354435` | `docs: add analysis diagrams and evidence plan` |
-| `d9242b4` | `test: verify financial logic and prepare Vercel routing` |
-| `75511af` | `docs: add git restore demonstration baseline` |
-| `89b66ea` | `docs: add conflict simulation baseline` |
-| `50d7387` | `docs: describe financial report feature branch` |
-| `84b131f` | `docs: record report verification on main` |
-| `9f2dfbb` | `merge: resolve report status documentation conflict` |
-| `1e89bee` | `docs: record verified Git workflow and remote status` |
-| `bb94199` | `docs: update branch feature verification status` |
-| `fabb94a` | `feat: harden financial CSV export against formulas` |
-| `c74b23f` | `test: cover minus-prefixed CSV formulas` |
-| `e19d757` | `docs: record complete local history audit` |
-| `d0b35fc` | `fix: initialize CSRF token before page output` |
-| `HEAD` | `docs: record final local verification` |
+| 04bc271 | chore: initialize PHP project foundation |
+| e90f7aa | feat: add MySQL schema and simulated data |
+| 1e379e7 | feat: add authentication and dashboard |
+| d7aa4e8 | feat: add sales and expense recording |
+| 927d2cc | feat: add financial reports and CSV export |
+| 2354435 | docs: add analysis diagrams and evidence plan |
+| d9242b4 | test: verify financial logic and prepare Vercel routing |
+| 75511af | docs: add git restore demonstration baseline |
+| 89b66ea | docs: add conflict simulation baseline |
+| 50d7387 | docs: describe financial report feature branch |
+| 84b131f | docs: record report verification on main |
+| 9f2dfbb | merge: resolve report status documentation conflict |
+| fabb94a | feat: harden financial CSV export against formulas |
+| c74b23f | test: cover minus-prefixed CSV formulas |
+| d0b35fc | fix: initialize CSRF token before page output |
+| 3c52638 | docs: record public GitHub repository location |
+| 9a4bc28 | test: verify report date range boundaries |
+| 2164031 | docs: include report range verification command |
 
-## Pemulihan perubahan dengan `git restore`
+## Repository GitHub, branch, dan pull request
 
-File `docs/git-restore-demo.md` awalnya berisi kalimat dasar yang telah di-commit. Kalimatnya kemudian diubah sementara; `git diff -- docs/git-restore-demo.md` memperlihatkan perubahan. Perintah `git restore -- docs/git-restore-demo.md` memulihkan isi dasar, lalu `git diff --exit-code -- docs/git-restore-demo.md` mengembalikan kode keluar 0. File akhir kembali sama dengan commit dasar.
+- Repository publik: https://github.com/RAJA240104015/uts-rpl-penjualan-umkm.
+- Branch utama: main.
+- Branch fitur: feature/laporan-keuangan.
+- Pull request #1: https://github.com/RAJA240104015/uts-rpl-penjualan-umkm/pull/1.
+- Pull request menambahkan uji rentang laporan inklusif dan dokumentasi perintah uji; GitHub menyatakan tidak ada konflik lalu PR digabungkan ke main pada 21 Oktober 2026.
+- Merge commit PR: 7a50f50048fd75a9e488d10977d93cbc640d6b50.
+- Commit publik mencakup source aplikasi, skema SQL, data uji simulasi, dokumentasi desain, serta diagram ERD, context, proses bisnis, dan SDLC.
+
+## Pemulihan perubahan dengan git restore
+
+File docs/git-restore-demo.md mula-mula berisi kalimat dasar yang sudah di-commit. Kalimatnya diubah sementara; git diff -- docs/git-restore-demo.md memperlihatkan perubahan. Perintah git restore -- docs/git-restore-demo.md memulihkan isi dasar, lalu git diff --exit-code -- docs/git-restore-demo.md menghasilkan kode keluar 0. File akhir sama dengan versi commit dasar.
 
 ## Konflik dan penyelesaian
 
-Pada commit `50d7387`, branch `feature/laporan-keuangan` mengubah baris status laporan. Pada commit `84b131f`, branch `main` mengubah baris yang sama dengan isi berbeda. Perintah `git merge main` ketika berada di feature branch menghasilkan `CONFLICT (content)` pada `docs/git-conflict-demo.md` dan status `UU`. Penanda konflik dibaca lalu dihapus dengan menggabungkan konteks fitur dan verifikasi lokal. `git diff --check` selesai tanpa temuan, penyelesaian di-commit sebagai `9f2dfbb`, kemudian branch `main` diperbarui memakai fast-forward dari feature branch. Setelah itu branch fitur disinkronkan, mengubah pengamanan ekspor CSV, dan di-commit sebagai `fabb94a`; pengujian validasi/rumus/CSV lulus dan commit tersebut juga digabungkan ke `main` secara fast-forward.
+Pada commit 50d7387, branch feature/laporan-keuangan mengubah baris status laporan. Pada commit 84b131f, branch main mengubah baris yang sama dengan isi berbeda. Perintah git merge main dari branch fitur menghasilkan CONFLICT (content) pada docs/git-conflict-demo.md dengan status UU. Penanda konflik dibaca dan diselesaikan dengan menggabungkan konteks fitur dan hasil verifikasi. git diff --check tidak menemukan masalah, penyelesaian dicatat dalam commit 9f2dfbb, lalu branch main diperbarui secara fast-forward.
 
-## Bukti yang masih perlu dilengkapi
+Konflik tersebut dilakukan di Git lokal, bukan dibuat ulang di GitHub. Screenshot terminal untuk kondisi konflik dan resolusinya belum tersedia pada folder screenshot.
 
-Screenshot terminal dan GitHub tidak disimpan pada sesi ini. Remote GitHub, push, pull request, dan penggabungan pull request online belum dilakukan. Lihat `screenshots/README.md` untuk daftar screenshot autentik yang harus ditambahkan setelah repository dan akses akun tersedia.
+## Pengujian lokal
 
-## Pemeriksaan routing lokal
+Pemeriksaan agregasi dan keamanan CSV dijalankan dengan php tests/financial_logic.php. Uji batas tanggal laporan dijalankan dengan php tests/financial_range.php; data sementara dibuat untuk tanggal sebelum, awal, akhir, dan sesudah periode. Hasil yang diharapkan adalah penjualan Rp2.500, pengeluaran Rp550, dan laba sederhana Rp1.950 pada rentang inklusif. Seluruh baris uji di-rollback.
 
-Router API dijalankan melalui PHP CLI dengan `REQUEST_URI` untuk `/`, `/login.php`, dan rute tak dikenal. Dashboard dan halaman masuk dirender tanpa peringatan PHP; rute tak dikenal ditolak. Setelah uji ini, inisialisasi token CSRF dipindahkan sebelum keluaran HTML agar header dapat dikirim lebih andal pada runtime serverless.
+## Bukti yang belum tersedia
+
+Screenshot autentik terminal dan GitHub belum disimpan ke folder screenshot pada sesi ini. Daftar bukti yang masih perlu diambil ditulis pada screenshots/README.md. Status website publik belum dicatat karena deployment Vercel ditangani pemilik proyek.
