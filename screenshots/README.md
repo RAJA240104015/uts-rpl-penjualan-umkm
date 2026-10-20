@@ -1,12 +1,18 @@
 # Bukti screenshot
 
-Direktori ini disiapkan untuk bukti autentik aplikasi, database, Git, GitHub, dan deployment. Sesi komputer ini dapat menampilkan screenshot browser secara langsung, tetapi tidak menyediakan cara yang terdokumentasi untuk menyimpan hasil tangkapan tersebut sebagai file gambar lokal. Karena itu tidak ada gambar bukti yang dibuat atau disalin ke direktori ini.
+Tangkapan browser autentik dari aplikasi lokal dan halaman GitHub telah disimpan pada folder screenshot lokal proyek. Berkas PNG sengaja tidak dimasukkan ke repository publik; halaman ini hanya mendokumentasikan nama bukti dan statusnya. Akun sementara serta transaksi pada screenshot aplikasi adalah data simulasi dan sudah dihapus setelah pengujian.
 
-Sebelum pengumpulan, ambil screenshot asli berikut dari layar yang benar-benar digunakan dan simpan di direktori ini:
+Bukti browser yang tersedia secara lokal:
 
-- Aplikasi lokal: dashboard, formulir dan daftar penjualan, pencatatan pengeluaran, serta laporan.
-- Database: tabel aktual atau struktur dari MariaDB.
-- Git: PHP/lingkungan, `git log`, `git restore`, feature branch, konflik sebelum dan sesudah diselesaikan.
-- GitHub dan deployment: repository/PR yang benar-benar tersedia, website publik, serta operasi produksi yang berhasil.
+- `03-local-login.png`, `04-dashboard.png`.
+- `05-sales-form.png`, `06-sales-list.png`, `07-expense-recording.png`, `08-financial-report.png`.
+- `12-feature-branch.png`, `13-pull-request.png`, `16-github-repository.png`.
+- `19-mobile-dashboard.png`.
+
+Bukti yang masih perlu diambil:
+
+- Terminal: versi PHP, `git log`, `git restore`, konflik sebelum merge, dan resolusi konflik.
+- Struktur basis data aktual dari MariaDB atau phpMyAdmin.
+- Website publik dan operasi produksi setelah deployment Vercel.
 
 Jangan menampilkan password, token, `.env`, atau data pelanggan nyata.
