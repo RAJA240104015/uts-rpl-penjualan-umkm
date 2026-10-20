@@ -57,4 +57,6 @@ Pemeriksaan agregasi dan keamanan CSV dijalankan dengan php tests/financial_logi
 
 ## Bukti yang belum tersedia
 
-Screenshot autentik terminal dan GitHub belum disimpan ke folder screenshot pada sesi ini. Daftar bukti yang masih perlu diambil ditulis pada screenshots/README.md. Status website publik belum dicatat karena deployment Vercel ditangani pemilik proyek.
+Tangkapan browser aplikasi lokal (login, dashboard, penjualan, pengeluaran, laporan, dan tampilan ponsel) serta halaman publik GitHub (repository, feature branch, dan PR) sudah disimpan pada folder screenshot lokal. Berkas PNG sengaja tidak diunggah ke repository publik. Data pada screenshot aplikasi berlabel simulasi; akun uji dan catatan tambahannya dihapus setelah pengujian.
+
+Screenshot terminal untuk PHP, `git log`, pemulihan `git restore`, dan konflik sebelum/sesudah penyelesaian, serta screenshot struktur database aktual masih belum tersedia. Bukti URL publik dan operasi produksi menunggu deployment Vercel.
