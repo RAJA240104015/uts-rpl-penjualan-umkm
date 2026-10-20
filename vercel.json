@@ -5,8 +5,8 @@
       "runtime": "vercel-php@0.6.2"
     }
   },
-  "rewrites": [
-    { "source": "/", "destination": "/api/index.php" },
-    { "source": "/(.*\\.php)", "destination": "/api/index.php" }
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
   ]
 }
